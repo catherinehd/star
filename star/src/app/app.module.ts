@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { HomeModule } from './home/home.module';
+import { ArticleModule } from './article/article.module';
+import { BaodianModule } from './baodian/baodian.module';
+import { PersonModule } from './person/person.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HomeModule, BrowserAnimationsModule, AppRoutingModule, ArticleModule, BaodianModule, PersonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
