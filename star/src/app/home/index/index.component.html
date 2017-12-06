@@ -1,93 +1,115 @@
+<app-nav [title]="'The constellation list'" [showConfig]="{}"></app-nav>
+
 <section class="sec-home">
   <ul>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-baiyang"></use>
-      </svg>
-      <span>白羊座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/aries')">
+      <div style="border: 1px solid #ff9b85">
+        <svg style="stroke: #ff9b85;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-baiyang"></use>
+        </svg>
+      </div>
+      <span>Aries</span>
       <span>(3.21-4.19)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-jinniu"></use>
-      </svg>
-      <span>金牛座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/taurus')">
+      <div style="border: 1px solid #97dff7">
+        <svg style="stroke: #97dff7;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-jinniu"></use>
+        </svg>
+      </div>
+      <span>Taurus</span>
       <span>(4.20-5.20)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-shuangzi"></use>
-      </svg>
-      <span>双子座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/gemini')">
+      <div style="border: 1px solid #ffcc7d">
+        <svg style="stroke: #ffcc7d;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-shuangzi"></use>
+        </svg>
+      </div>
+      <span>Gemini</span>
       <span>(5.21-6.21)</span>
     </li>
   </ul>
   <ul>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-juxie"></use>
-      </svg>
-      <span>巨蟹座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/cancer')">
+      <div style="border: 1px solid #c6d5ce">
+        <svg style="stroke: #c6d5ce;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-juxie"></use>
+        </svg>
+      </div>
+      <span>Cancer</span>
       <span>(6.22-7.22)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-shizi"></use>
-      </svg>
-      <span>狮子座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/leo')">
+      <div style="border: 1px solid #f7dd62">
+        <svg style="stroke: #f7dd62;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-shizi"></use>
+        </svg>
+      </div>
+      <span>Leo</span>
       <span>(7.23-8.22)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-chunv"></use>
-      </svg>
-      <span>处女座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/virgo')">
+      <div style="border: 1px solid #c8d86d">
+        <svg style="stroke: #c8d86d;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-chunv"></use>
+        </svg>
+      </div>
+      <span>Virgo</span>
       <span>(8.23-9.22)</span>
     </li>
   </ul>
   <ul>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-tianpin"></use>
-      </svg>
-      <span>天秤座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/libra')">
+      <div style="border: 1px solid #fe93bd">
+        <svg style="stroke: #fe93bd;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-tianpin"></use>
+        </svg>
+      </div>
+      <span>Libra</span>
       <span>(9.23-10.23)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-tianxie"></use>
-      </svg>
-      <span>天蝎座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/scorpio')">
+      <div style="border: 1px solid #df8eea">
+        <svg style="stroke: #df8eea;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-tianxie"></use>
+        </svg>
+      </div>
+      <span>Scorpio</span>
       <span>(10.24-11.22)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-sheshou"></use>
-      </svg>
-      <span>射手座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/sagittarius')">
+      <div style="border: 1px solid #9adc94">
+        <svg style="stroke: #9adc94;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-sheshou"></use>
+        </svg>
+      </div>
+      <span>Sagittarius</span>
       <span>(11.23-12.21)</span>
     </li>
   </ul>
   <ul>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-mojie"></use>
-      </svg>
-      <span>摩羯座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/capricorn')">
+      <div style="border: 1px solid #88c9ef">
+        <svg style="stroke: #88c9ef;">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-mojie"></use>
+        </svg>
+      </div>
+      <span>Capricorn</span>
       <span>(12.22-1.19)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-xingyunshi"></use>
-      </svg>
-      <span>水瓶座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/aquarii')">
+      <div style="border: 1px solid #97dad3">
+        <svg style="stroke: #97dad3;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 104.88"><defs><style>.cls-1{stroke-linecap:round;stroke-linejoin:round;stroke-width:10px;}</style></defs><title>shuiping</title><path class="cls-1" d="M0,84.6c15.1-25.4,51.8-25,66.3.6h0c14.7,25.6,51.7,25.8,66.5.2l1.3-2.2c14.6-25.1,50.7-25.6,65.9-.9" transform="translate(5 -59.07)"/><path class="cls-1" d="M0,139c15.1-25.4,51.8-25,66.3.6h0c14.6,25.7,51.7,25.8,66.5.3l1.3-2.2c14.6-25.1,50.7-25.6,65.9-.9" transform="translate(5 -59.07)"/></svg>
+      </div>
+      <span>Aquarii</span>
       <span>(1.20-2.18)</span>
     </li>
-    <li>
-      <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-xingyunshi"></use>
-      </svg>
-      <span>双鱼座</span>
+    <li appFastClick (onFastClick)="goPage('./star-detail/pisces')">
+      <div style="border: 1px solid #dbe37c">
+        <svg style="stroke: #dbe37c;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160.5 186"><defs><style>.cls-1{stroke-linecap:round;stroke-linejoin:round;stroke-width:10px;}</style></defs><title>shuangyu</title><path class="cls-1" d="M30.5,10.7c28.5,12.5,49,47.2,49,88s-20.5,75.5-49,88" transform="translate(-25.5 -5.7)"/><path class="cls-1" d="M181,10.7c-28.5,12.5-49,47.2-49,88s20.5,75.5,49,88" transform="translate(-25.5 -5.7)"/><line class="cls-1" x1="5" y1="93" x2="155.5" y2="93.1"/></svg>
+      </div>
+      <span>Pisces</span>
       <span>(2.19-3.20)</span>
     </li>
   </ul>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CoreModule } from './core/core/core.module';
 import { HomeModule } from './home/home.module';
 import { ArticleModule } from './article/article.module';
 import { BaodianModule } from './baodian/baodian.module';
@@ -15,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
   ],
   imports: [
-    BrowserModule, HomeModule, BrowserAnimationsModule, AppRoutingModule, ArticleModule, BaodianModule, PersonModule
+    BrowserModule, CoreModule, HomeModule, BrowserAnimationsModule, AppRoutingModule, ArticleModule, BaodianModule, PersonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
