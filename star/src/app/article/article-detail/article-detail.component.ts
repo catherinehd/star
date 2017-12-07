@@ -12,4 +12,7 @@ export class ArticleDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  onsave() {
+    console.log('save');
+  }
 }

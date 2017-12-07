@@ -6,7 +6,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 
 const articleRoutes: Routes = [
   { path: 'article', component: IndexComponent },
-  { path: 'article/article-detail/:id', component: ArticleDetailComponent }
+  { path: 'article-detail/:id', component: ArticleDetailComponent }
 ];
 
 @NgModule({

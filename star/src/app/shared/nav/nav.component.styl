@@ -20,13 +20,19 @@
     position absolute
     bottom 0
     min-width 30px
-    fong-size 15px
+    font-size 15px
+    height 44px
   .left-btn
     left $default-h-padding
     text-align left
   .right-btn
     right $default-h-padding
     text-align right
+    .icon-save
+      width 16px
+      height 16px
+      fill none
+      stroke #ffffff
 
 .nav-bg
   box-sizing content-box
@@ -34,10 +40,7 @@
 
 .icon-left-arrow
   height 20px
-  widht 20px
+  width 20px
   stroke $theme-white-color
   fill none
   vertical-align middle
-  transform rotate(180deg)
-  &:active
-    fill darken($theme-white-color, 10%)
