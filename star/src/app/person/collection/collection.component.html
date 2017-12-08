@@ -1,0 +1,182 @@
+<app-nav *ngIf="!finish" [title]="'My collection'" [showConfig]="{isArrowShow:true, isEditShow: true}" (onEdit)="onedit()"></app-nav>
+<app-nav *ngIf="finish" [title]="'My collection'" [showConfig]="{isArrowShow:true, isFinishShow: true}" (onFinish)="onfinish()"></app-nav>
+
+<main class="collection-sec">
+  <ul class="collection-list" *ngIf="hascollection">
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are or fffffff
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are ddddd
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are adffffff
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are adsf.faddddd..
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are or fffffff
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are ddddd
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are adffffff
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are adsf.faddddd..
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are or fffffff
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are ddddd
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are adffffff
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+    <li appFastClick (onFastClick)="goPage()">
+      <input *ngIf="finish" type="checkbox" />
+      <div class="detail">
+        <div class="title">
+          The most stupid sign and the five stars, are adsf.faddddd..
+        </div>
+        <div class="date">
+          <svg>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+          </svg>
+          2017-11-21
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="nocontent" *ngIf="!hascollection">
+    <svg>
+      <use xlink:href="assets/icon/symbol-defs.svg#icon-wushoucang"></use>
+    </svg>
+    <p>You haven't got any collection yet</p>
+  </div>
+</main>

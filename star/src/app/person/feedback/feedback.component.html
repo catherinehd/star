@@ -1,0 +1,24 @@
+<app-nav [title]="'Feedback'" [showConfig]="{isCancelShow:true}"></app-nav>
+
+<p class="tip">Provide any contact information to facilitate your problem solving (non-mandatory)</p>
+
+<div class="form">
+  <div class="form-field email">
+    <label>
+      Email address:
+    </label>
+    <input type="text">
+  </div>
+  <div class="form-field">
+    <label>
+      Mobile phone:
+    </label>
+    <input type="number">
+  </div>
+  <div class="form-field comments">
+    <textarea rows="10" placeholder="Your comments and feedback will be answered in time" (keyup)="getwordnum()"></textarea>
+  </div>
+  <div class="word-num"><span>{{havenum}}/{{allnum}}</span></div>
+
+  <button class="submit">Submit</button>
+</div>

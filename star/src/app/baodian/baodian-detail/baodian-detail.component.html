@@ -1,0 +1,161 @@
+<app-nav [title]="'Constellation character'" [showConfig]="{isArrowShow:true}" (onSave)="onsave()"></app-nav>
+
+<main class="character-detail">
+  <section class="top-sec">
+    <div class="pic">
+      <svg>
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-jinniu"></use>
+      </svg>
+    </div>
+    <div class="detail">
+      <span>Taurus</span>
+      <span>4.20-5.20</span>
+    </div>
+    <div class="change" appFastClick (onFastClick)="tabbar = true">
+      Toggle
+      <svg>
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-qiehuan"></use>
+      </svg>
+    </div>
+  </section>
+
+  <section class="content" *ngIf="!movie">
+    <p>
+      A slow sign. All things always considered before filtering, belonging to the late form of the big, the sentiment is also relatively late. But they have superhuman stability, and once the bet is made, it is safe to win.
+    </p>
+    <p>
+      Taurus is the second sign of the zodiac, the first sign of the earth sign, so it is also known as "the baby of the earth." As the name suggests, he is a real bull. And a cow with a very possessive and possessive character.
+    </p>
+    <p>
+      Taurus people seem to be naturally depressed and depressed. When these accumulated to the top, it would explode like a volcano. They are the most industrious, hardworking and unyielding in the zodiac. Patience, endurance and toughness are characteristics. They believe that the joy of love, beauty and riches is the proof of existence, and the truth of his faith, for this purpose; They choose the most secure, authentic path (usually a long-simmering and thoughtful conclusion), and once determined, no one can change it.
+    </p>
+  </section>
+
+  <section class="movie-content" *ngIf="movie">
+    <div class="brief">
+      <div class="title">
+        《Wind and rain harvard road》
+      </div>
+      <div class="detail">
+        <p>
+          The film director is origin and desolate, as parents age eight drugs began begging, at the age of 15, her mother died of AIDS, then father into a shelter, dispossessed her 17 years old started learning high school courses, with only 2 years of optical finished high school four years course, won the New York times first-class scholarship in 1996 and went to harvard to study.
+        </p>
+      </div>
+    </div>
+    <img src="assets/image/dianying@2x.png" />
+    <div class="comment">
+      <div class="title">
+        Recommended reasons:
+      </div>
+      <div class="detail">
+        <p>
+          Aries are not afraid of the earth, and once they have made up their minds, they will never die, even if they have to overcome everything to achieve their purpose. The main character of "harvard road" is similar to that of Aries. Birth is not a choice for us, we can choose only to take the initiative to change our future.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="exchange-tab" *ngIf="tabbar">
+  <div class="tab-container">
+    <div class="close-btn">
+      <span appFastClick (onFastClick)="tabbar = false">X</span>
+    </div>
+    <div class="line">
+      <span></span>
+    </div>
+    <div class="tab">
+      <div class="tab-title">
+        Choose the constellation
+      </div>
+      <div class="list">
+        <ul>
+          <li appFastClick (onFastClick)="gostar('aries')">
+            <svg style="stroke:#ff9b85 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-baiyang"></use>
+            </svg>
+            <span>Aries</span>
+            <span>(19日3.21-4.19)</span>
+          </li>
+          <li>
+            <svg style="stroke:#97dff7 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-jinniu"></use>
+            </svg>
+            <span>Taurus</span>
+            <span>(4.20-5.20)</span>
+          </li>
+          <li>
+            <svg style="stroke:#ffcc7d ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shuangzi"></use>
+            </svg>
+            <span>Gemini</span>
+            <span>(5.21-6.19)</span>
+          </li>
+          <li>
+            <svg style="stroke:#c6d5ce ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-juxie"></use>
+            </svg>
+            <span>Cancer</span>
+            <span>(6.22-7.22)</span>
+          </li>
+          <li>
+            <svg style="stroke:#f7dd62 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shizi"></use>
+            </svg>
+            <span>Leo</span>
+            <span>(7.23-8.22)</span>
+          </li>
+          <li>
+            <svg style="stroke:#c8d86d ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-chunv"></use>
+            </svg>
+            <span>Virgo</span>
+            <span>(8.23-9.22)</span>
+          </li>
+          <li>
+            <svg style="stroke:#fe93bd ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-tianpin"></use>
+            </svg>
+            <span>Libra</span>
+            <span>(9.23-10.23)</span>
+          </li>
+          <li>
+            <svg style="stroke:#df8eea ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-tianxie"></use>
+            </svg>
+            <span>Scorpio</span>
+            <span>(10.24-11.22)</span>
+          </li>
+          <li>
+            <svg style="stroke:#9adc94 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-sheshou"></use>
+            </svg>
+            <span>Sagittarius</span>
+            <span>(11.23-12.21)</span>
+          </li>
+          <li>
+            <svg style="stroke:#88c9ef ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-mojie"></use>
+            </svg>
+            <span>Capricorn</span>
+            <span>(12.23-1.19)</span>
+          </li>
+          <li>
+            <svg style="stroke:#97dad3 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shuiping"></use>
+            </svg>
+            <span>Auarii</span>
+            <span>(1.20-2.18)</span>
+          </li>
+          <li>
+            <svg style="stroke:#dbe37c ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shuangyu"></use>
+            </svg>
+            <span>Pisces</span>
+            <span>(2.19-3.20)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

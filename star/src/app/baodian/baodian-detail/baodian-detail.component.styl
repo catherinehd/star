@@ -1,0 +1,143 @@
+@import "../../../assets/css/variable"
+
+.character-detail
+  padding-bottom 5.9rem
+  .top-sec
+    padding 2.2rem $default-h-padding
+    display flex
+    justify-content space-between
+    width 100%
+    height 11rem
+    vertical-align middle
+    margin-bottom 1.5rem
+    background #fff
+    .pic
+      flex-grow 0
+      width 6.5rem
+      height 6.5rem
+      border-radius 50%
+      text-align center
+      background-image linear-gradient(to right, #32e4ea, #45feb2);
+      svg
+        width 3.5rem
+        height 6.5rem
+        fill none
+        stroke $theme-white-color
+    .detail
+      flex-grow 1
+      text-align left
+      margin-left 1.5rem
+      margin-top 1.6rem
+      span
+        display block
+      span:nth-child(1)
+        font-size $font-bigger-size
+        color $font-main-color
+      span:nth-child(2)
+        font-size 1.3rem
+        color $font-sub-color
+    .change
+      flex-grow 0
+      color $theme-blue-color
+      font-size $font-smaller-size
+      line-height 6.5rem
+      svg
+        width 1.4rem
+        height 1.4rem
+        fill none
+        vertical-align middle
+        stroke $theme-blue-color
+  .content
+    background #fff
+    padding 1rem $default-h-padding
+    p
+      margin-bottom 1.2rem
+      font-size $font-normal-size
+      color $font-main-color
+  .movie-content
+    background #fff
+    padding 1rem $default-h-padding
+    .title
+      color $font-main-color
+      font-size $font-normal-size
+      font-weight bold
+      margin-bottom 1rem
+    p
+      font-size $font-normal-size
+      color $font-main-color
+    img
+      margin 1.5rem 0
+      width 100%
+      height 16rem
+
+.exchange-tab
+  width 100%
+  height 100%
+  background rgba(0,0,0,0.3)
+  position fixed
+  z-index 3
+  top 0
+  left 0
+  .tab-container
+    width 26.5rem
+    height 47rem
+    position absolute
+    left 50%
+    top 50%
+    margin-top -23.5rem
+    margin-left -13rem
+    .close-btn
+      width 100%
+      text-align right
+      span
+        width 3rem
+        height 3rem
+        display inline-block
+        color $theme-blue-color
+        font-size 1.2rem
+        text-align center
+        line-height 3rem
+        background $theme-white-color
+        border-radius 50%
+    .line
+      height 4rem
+      width 100%
+      text-align right
+      span
+        display inline-block
+        border-left 1px solid #fff
+        width 1.5rem
+        height 4rem
+   .tab
+     background #fff
+     border-radius .5rem
+     .tab-title
+       font-size $font-normal-size
+       color $theme-blue-color
+       text-align center
+       padding 1.6rem 0 1rem
+       border-bottom 1px solid $theme-blue-color
+     .list
+       ul
+         padding-bottom 1.9rem
+         li
+           height 2.9rem
+           width 100%
+           color $font-main-color
+           padding-left 2.3rem
+           &:active
+             background #d0f1f2
+           span
+             display inline-block
+             height 2.9rem
+             line-height 2.9rem
+           span:nth-child(1)
+             font-size 1.3rem
+           span:nth-child(2)
+             font-size $font-small-size
+           svg
+             width 1.3rem
+             height 2.9rem
+             vertical-align middle
+             margin-right .9rem
+             fill none
