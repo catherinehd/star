@@ -1,38 +1,38 @@
-<app-nav [title]="'Star article details'" [showConfig]="{isArrowShow:true,isSaveShow:true}" (onSave)="onsave()"></app-nav>
+<app-nav [title]="'Star article details'" [iscollect]="collectmsg" [showConfig]="{isArrowShow:true,isSaveShow:true}" (onSave)="onsave()"></app-nav>
 
 <main class="article-detail-sec">
   <section class="top">
     <div class="title">
-      How to compliment your partner, you can't...
+      {{articelTitle}}
     </div>
     <div class="date">
       <svg>
-        <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+        <use xlink:href="assets/icon/symbol-defs.svg#icon-nicheng"></use>
       </svg>
-      2017-11-21
+      {{author}}
     </div>
     <img src="assets/image/xingwenxiangqing.png" />
   </section>
 
   <section class="guideance">
     <p>
-      Don't think that men are careless about details. In the intimate space between two people, he needs your affirmation and trust. Please see the following article for the following article.
+      {{content}}
     </p>
   </section>
 
-  <section class="detail-sec">
-    <ul class="star-list">
-      <li>
-        <div class="small-title">
-          Aries
-          <span>(03.21-04.20)</span>
-        </div>
-        <div class="description">
-          <p>Praise Aries male key words: just passion and courage.</p>
-          <p>How you praise him: Aries men like a fire, they hope that their own enthusiasm can burn all the people around you, they fear most is a hot face to cool the somebody else's ass, that's embarrassing, poor sheep sheep will tend to be red face. So, praised the Aries man, first you must learn to understand his passion, understand his enthusiasm, realize his enthusiasm, when you can feel you are woven into his enthusiasm, so your name will be is happy for his praise.</p>
-        </div>
-      </li>
-    </ul>
-  </section>
+  <!--<section class="detail-sec">-->
+    <!--<ul class="star-list">-->
+      <!--<li>-->
+        <!--<div class="small-title">-->
+          <!--Aries-->
+          <!--<span>(03.21-04.20)</span>-->
+        <!--</div>-->
+        <!--<div class="description">-->
+          <!--<p>Praise Aries male key words: just passion and courage.</p>-->
+          <!--<p>How you praise him: Aries men like a fire, they hope that their own enthusiasm can burn all the people around you, they fear most is a hot face to cool the somebody else's ass, that's embarrassing, poor sheep sheep will tend to be red face. So, praised the Aries man, first you must learn to understand his passion, understand his enthusiasm, realize his enthusiasm, when you can feel you are woven into his enthusiasm, so your name will be is happy for his praise.</p>-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</section>-->
 
 </main>

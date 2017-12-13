@@ -6,7 +6,7 @@ import { StarDetailComponent } from './star-detail/star-detail.component';
 
 const homeRoutes: Routes = [
   { path: 'home', component: IndexComponent },
-  { path: 'star-detail/:name', component: StarDetailComponent }
+  { path: 'star-detail/:name/:time', component: StarDetailComponent }
 ];
 
 @NgModule({

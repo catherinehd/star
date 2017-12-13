@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HttpService } from '../../service/http.service';
 import { NavigateService } from '../../service/navigate.service';
 import { DeviceService } from '../../service/device.service';
+import { PersonService } from '../../service/person.service';
+import { BaodianService } from '../../service/baodian.service';
+import { ArticleService } from '../../service/article.service';
 
 @NgModule({
   imports: [
     CommonModule, HttpModule, BrowserAnimationsModule
   ],
-  providers: [ NavigateService, DeviceService ],
+  providers: [ NavigateService, HttpService, DeviceService, PersonService, BaodianService, ArticleService ],
   exports: [ HttpModule, BrowserAnimationsModule ]
 })
 export class CoreModule {

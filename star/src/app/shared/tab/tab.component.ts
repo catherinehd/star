@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab.component.styl']
 })
 export class TabComponent implements OnInit {
+  homeurl: string;
 
-  constructor() { }
+  constructor() {
+    this.homeurl = 'home';
+  }
 
   ngOnInit() {
+    const defaultStar = localStorage.getItem('star');
+    if (defaultStar) {
+      this.homeurl = '/star-detail/' + defaultStar + '/today';
+    }
   }
 
 }

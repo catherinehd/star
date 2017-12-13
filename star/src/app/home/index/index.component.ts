@@ -11,6 +11,10 @@ export class IndexComponent implements OnInit {
   constructor(private navigateService: NavigateService) { }
 
   ngOnInit() {
+    const defaultStar = localStorage.getItem('star');
+    if (defaultStar) {
+      this.navigateService.pushToRoute('./star-detail/' + defaultStar + '/today');
+    }
   }
 
   goPage(url) {

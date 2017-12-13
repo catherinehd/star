@@ -2,23 +2,24 @@
 
 <p class="tip">Provide any contact information to facilitate your problem solving (non-mandatory)</p>
 
-<div class="form">
+<div class="form" [formGroup]="feedbackForm">
   <div class="form-field email">
-    <label>
+    <label class="form-label">
       Email address:
     </label>
-    <input type="text">
+    <input type="text" formControlName="email">
   </div>
-  <div class="form-field">
-    <label>
+  <div class="form-field tel">
+    <label class="form-label">
       Mobile phone:
     </label>
-    <input type="number">
+    <input type="number" formControlName="tel">
   </div>
   <div class="form-field comments">
-    <textarea rows="10" placeholder="Your comments and feedback will be answered in time" (keyup)="getwordnum()"></textarea>
+    <textarea rows="10" id="comments" formControlName="word" placeholder="Your comments and feedback will be answered in time" (keydown)="getwordnum(e)"></textarea>
   </div>
   <div class="word-num"><span>{{havenum}}/{{allnum}}</span></div>
-
-  <button class="submit">Submit</button>
 </div>
+<button class="submit-btn" [disabled]="!feedbackForm.value.email || !feedbackForm.value.tel || !feedbackForm.value.word" type="button" appFastClick (onFastClick)="onSubmit()">Submit</button>
+
+<app-fly-msg [msg]="msg"></app-fly-msg>

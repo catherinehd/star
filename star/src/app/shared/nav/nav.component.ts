@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { NavigateService } from '../../service/navigate.service';
 
 @Component({
@@ -6,16 +6,32 @@ import { NavigateService } from '../../service/navigate.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.styl']
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnChanges {
   @Input() title: string;
   @Input() showConfig: ShowConfig;
+  @Input() iscollect: string;
   @Output() onSave = new EventEmitter();
   @Output() onEdit = new EventEmitter();
   @Output() onFinish = new EventEmitter();
 
-  constructor(private navigateService: NavigateService) { }
+  collect: boolean;
+  constructor(private navigateService: NavigateService) {
+  }
 
   ngOnInit() {
+   if (this.iscollect === 'y') {
+     this.collect = true;
+   } else {
+     this.collect = false;
+   }
+  }
+
+  ngOnChanges() {
+    if (this.iscollect === 'y') {
+      this.collect = true;
+    } else {
+      this.collect = false;
+    }
   }
 
   goBack() {

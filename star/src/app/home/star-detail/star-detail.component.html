@@ -1,21 +1,27 @@
 <header class="top-container" appDevicePadding>
   <div class="img-out-line">
     <div class="img-container">
-      <img src="assets/image/baiyang.png" />
+      <img src="assets/image/{{starname}}.png" />
     </div>
   </div>
   <div class="title-container">
-    <div class="star">Aries</div>
-    <div class="date">2017-11-12</div>
+    <div class="star">{{starname}}</div>
+    <div class="date">{{day}}</div>
+  </div>
+  <div class="change" appFastClick (onFastClick)="tabbar = true">
+    Toggle
+    <svg>
+      <use xlink:href="assets/icon/symbol-defs.svg#icon-qiehuan"></use>
+    </svg>
   </div>
 </header>
 
 <div class="navbar">
-  <div>Today</div>
-  <div>Tomorrow</div>
-  <div>Week</div>
-  <div>Month</div>
-  <div>Year</div>
+  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/today">Today</a>
+  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/tomorrow">Tomorrow</a>
+  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/week">Week</a>
+  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/month">Month</a>
+  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/year">Year</a>
 </div>
 
 <main>
@@ -54,6 +60,9 @@
             <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
           </svg>
           <svg class="icon-dianping-light">
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
+          </svg>
+          <svg class="icon-dianping-thin">
             <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
           </svg>
         </span>
@@ -122,7 +131,7 @@
       </div>
     </div>
     <div>
-      <div>
+      <div class="comments">
         <span>Comments:</span>
         <span>Stopping is not necessarily stagnation</span>
       </div>
@@ -170,3 +179,109 @@
 </main>
 
 <app-tab></app-tab>
+
+
+<div class="exchange-tab" *ngIf="tabbar">
+  <div class="tab-container">
+    <div class="close-btn">
+      <span appFastClick (onFastClick)="tabbar = false">X</span>
+    </div>
+    <div class="line">
+      <span></span>
+    </div>
+    <div class="tab">
+      <div class="tab-title">
+        Choose the constellation
+      </div>
+      <div class="list">
+        <ul>
+          <li appFastClick (onFastClick)="gostar('aries')">
+            <svg style="stroke:#ff9b85 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-baiyang"></use>
+            </svg>
+            <span>Aries</span>
+            <span>(19日3.21-4.19)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('taurus')">
+            <svg style="stroke:#97dff7 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-jinniu"></use>
+            </svg>
+            <span>Taurus</span>
+            <span>(4.20-5.20)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('gemini')">
+            <svg style="stroke:#ffcc7d ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shuangzi"></use>
+            </svg>
+            <span>Gemini</span>
+            <span>(5.21-6.19)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('cancer')">
+            <svg style="stroke:#c6d5ce ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-juxie"></use>
+            </svg>
+            <span>Cancer</span>
+            <span>(6.22-7.22)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('leo')">
+            <svg style="stroke:#f7dd62 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shizi"></use>
+            </svg>
+            <span>Leo</span>
+            <span>(7.23-8.22)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('virgo')">
+            <svg style="stroke:#c8d86d ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-chunv"></use>
+            </svg>
+            <span>Virgo</span>
+            <span>(8.23-9.22)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('libra')">
+            <svg style="stroke:#fe93bd ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-tianpin"></use>
+            </svg>
+            <span>Libra</span>
+            <span>(9.23-10.23)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('scorpio')">
+            <svg style="stroke:#df8eea ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-tianxie"></use>
+            </svg>
+            <span>Scorpio</span>
+            <span>(10.24-11.22)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('sagittarius')">
+            <svg style="stroke:#9adc94 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-sheshou"></use>
+            </svg>
+            <span>Sagittarius</span>
+            <span>(11.23-12.21)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('capricorn')">
+            <svg style="stroke:#88c9ef ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-mojie"></use>
+            </svg>
+            <span>Capricorn</span>
+            <span>(12.23-1.19)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('aquarii')">
+            <svg style="stroke:#97dad3 ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shuiping"></use>
+            </svg>
+            <span>Aquarii</span>
+            <span>(1.20-2.18)</span>
+          </li>
+          <li appFastClick (onFastClick)="gostar('pisces')">
+            <svg style="stroke:#dbe37c ">
+              <use xlink:href="assets/icon/symbol-defs.svg#icon-shuangyu"></use>
+            </svg>
+            <span>Pisces</span>
+            <span>(2.19-3.20)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

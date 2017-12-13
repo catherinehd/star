@@ -6,7 +6,10 @@ import { BaodianDetailComponent } from './baodian-detail/baodian-detail.componen
 
 const baodianRoutes: Routes = [
   { path: 'baodian', component: IndexComponent },
-  { path: 'baodian-detail/character/:id', component: BaodianDetailComponent}
+  { path: 'baodian-detail/character', component: BaodianDetailComponent},
+  { path: 'baodian-detail/love', component: BaodianDetailComponent},
+  { path: 'baodian-detail/music', component: BaodianDetailComponent},
+  { path: 'baodian-detail/movie', component: BaodianDetailComponent}
 ];
 
 @NgModule({

@@ -14,7 +14,10 @@
     <span>Finish</span>
   </button>
   <button class="right-btn" *ngIf="showConfig.isSaveShow" appFastClick (onFastClick)="save()">
-    <svg class="icon-save">
+    <svg class="icon-save" *ngIf="!collect">
+      <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
+    </svg>
+    <svg *ngIf="collect" class="icon-save" style="stroke: none; fill: yellow">
       <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
     </svg>
   </button>
