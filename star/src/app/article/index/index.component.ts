@@ -12,6 +12,9 @@ export class IndexComponent implements OnInit {
    pageSize: number;
    articleList: any[];
    linkurl: string;
+   isCompleted = false;
+  isPageLoading = true;
+  isLoading: boolean;
 
   constructor(private navigateService: NavigateService,
               private articleService: ArticleService) {
@@ -42,6 +45,24 @@ export class IndexComponent implements OnInit {
   goPage(url) {
     this.navigateService.push();
     this.navigateService.pushToRoute(url);
+  }
+
+  getList(pagenum) {
+    this.articleService.getArticleList(pagenum).subscribe( res => {
+      this.isPageLoading = false;
+      this.isLoading = false;
+      this.articleList = this.articleList.concat(res.json());
+      for (let i = 0 ; i < this.articleList.length; i++) {
+        // 将路径里面的 \ 换成 / ,特殊符号在这里需要转义
+        this.articleList[i].link = this.articleList[i].link.replace(/\//g, '\\');
+      }
+    });
+  }
+
+  canLoad() {
+    // 下滑加载
+    this.isLoading = true;
+    this.getList(this.pageSize = this.pageSize + 1);
   }
 
 }

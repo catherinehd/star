@@ -17,11 +17,11 @@
 </header>
 
 <div class="navbar">
-  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/today">Today</a>
-  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/tomorrow">Tomorrow</a>
-  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/week">Week</a>
-  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/month">Month</a>
-  <a routerLinkActive="active" routerLink="/star-detail/{{smallname}}/year">Year</a>
+  <a [ngClass]="{'active': type === 0}" appFastClick (onFastClick)="changedate('today')">Today</a>
+  <a [ngClass]="{'active': type === 1}" appFastClick (onFastClick)="changedate('tomorrow')">Tomorrow</a>
+  <a [ngClass]="{'active': type === 2}" appFastClick (onFastClick)="changedate('week')">Week</a>
+  <a [ngClass]="{'active': type === 3}" appFastClick (onFastClick)="changedate('month')">Month</a>
+  <a [ngClass]="{'active': type === 4}" appFastClick (onFastClick)="changedate('year')">Year</a>
 </div>
 
 <main>
@@ -30,41 +30,23 @@
       <div>
         <span>Overview:</span>
         <span>
-          <svg class="icon-dianping-light">
+          <svg class="icon-dianping-light" *ngFor="let item of alllightnum">
             <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
           </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
+        <svg class="icon-dianping-thin" *ngFor="let item of allthinnum">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
+        </svg>
         </span>
       </div>
       <div>
         <span>Love:</span>
         <span>
-          <svg class="icon-dianping-light">
+          <svg class="icon-dianping-light" *ngFor="let item of lovelightnum">
             <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
           </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
+        <svg class="icon-dianping-thin" *ngFor="let item of lovethinnum">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
+        </svg>
         </span>
       </div>
     </div>
@@ -72,68 +54,50 @@
       <div>
         <span>Career:</span>
         <span>
-          <svg class="icon-dianping-light">
+          <svg class="icon-dianping-light" *ngFor="let item of worklightnum">
             <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
           </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
+        <svg class="icon-dianping-thin" *ngFor="let item of workthinnum">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
+        </svg>
         </span>
       </div>
       <div>
         <span>Fortune:</span>
         <span>
-          <svg class="icon-dianping-light">
+          <svg class="icon-dianping-light" *ngFor="let item of moneylightnum">
             <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
           </svg>
-          <svg class="icon-dianping-light">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
-          <svg class="icon-dianping-thin">
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
-          </svg>
+        <svg class="icon-dianping-thin" *ngFor="let item of moneythinnum">
+          <use xlink:href="assets/icon/symbol-defs.svg#icon-xingxing"></use>
+        </svg>
         </span>
       </div>
     </div>
     <div>
       <div>
         <span>Lucky color:</span>
-        <span>Sapphire blue</span>
+        <span>{{xingyundetail.color}}</span>
       </div>
       <div>
         <span>Lucky number:</span>
-        <span>Nine</span>
+        <span>{{xingyundetail.number}}</span>
       </div>
     </div>
     <div>
       <div>
         <span>Noble:</span>
-        <span>Leo</span>
+        <span>{{xingyundetail.luckyastro}}</span>
       </div>
       <div>
         <span>Little people:</span>
-        <span>Leo</span>
+        <span>{{xingyundetail.badastro}}</span>
       </div>
     </div>
     <div>
       <div class="comments">
         <span>Comments:</span>
-        <span>Stopping is not necessarily stagnation</span>
+        <span>{{xingyundetail.short}}</span>
       </div>
     </div>
   </section>
@@ -143,7 +107,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.7 126.6"><defs><style>.cls-1,.cls-2{stroke-linecap:round;stroke-linejoin:round;}.cls-1{stroke-width:20px;}.cls-2{stroke-width:10px;}</style></defs><title>yunshi</title><polyline class="cls-1" points="10 10 10 116.6 148.7 116.6"/><line class="cls-1" x1="50" y1="67.6" x2="50" y2="116.6"/><line class="cls-1" x1="80.4" y1="49.1" x2="81.9" y2="116.6"/><line class="cls-1" x1="110" y1="69.6" x2="110" y2="116.6"/><polyline class="cls-2" points="10 48.4 67 10 100 37.6 141.9 10"/></svg>
       OVERVIEW
     </div>
-    <p>The narcissist is revel in the happiness of self - weaving and feels good about himself. Financial downturn, or do not act lightly, carefully stepping into the minefield. The pressure of job competition is too great, make it difficult to adapt, it is better to be your study time today, so it is more beneficial to the development of your career.</p>
+    <p>{{xingyundetail.summary}}</p>
   </section>
 
   <section class="love">
@@ -153,7 +117,7 @@
       </svg>
       LOVE
     </div>
-    <p> A single person has the opportunity to bond with the opposite sex, but should adopt a gradual approach. Married people should pay attention to communication.</p>
+    <p> {{xingyundetail.lovesummary}}</p>
   </section>
 
   <section class="work">
@@ -163,7 +127,7 @@
       </svg>
       WORK
     </div>
-    <p>Some of them are more likely to have arguments in communication with their partners, and it is easy to make their logical thinking happen.</p>
+    <p>{{xingyundetail.worksummary}}</p>
   </section>
 
   <section class="wealth">
@@ -173,12 +137,12 @@
       </svg>
       WEALTH
     </div>
-    <p>The fiscal mess is a mess, and for the conservatives it is less lethal and the greedy will lose a lot of money.</p>
+    <p>{{xingyundetail.moneysummary}}</p>
   </section>
 
 </main>
 
-<app-tab></app-tab>
+<app-tab (godefault)="godefault()"></app-tab>
 
 
 <div class="exchange-tab" *ngIf="tabbar">

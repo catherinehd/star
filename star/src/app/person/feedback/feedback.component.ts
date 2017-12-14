@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { PersonService } from '../../service/person.service';
+import { NavigateService } from '../../service/navigate.service';
 
 @Component({
   selector: 'app-feedback',
@@ -30,7 +31,8 @@ export class FeedbackComponent implements OnInit {
   };
 
   constructor(private formBuilder: FormBuilder,
-              private personService: PersonService) {
+              private personService: PersonService,
+              private navigateService: NavigateService) {
     this.allnum = 200;
     this.havenum = 0;
   }
@@ -72,15 +74,18 @@ export class FeedbackComponent implements OnInit {
     return `${telArr[0]}${telArr[1]}${telArr[2]}`;
   }
 
-  showTip(msg) {
+  showTip(msg, callback ?: any) {
     this.msg = msg;
-    setTimeout(() => this.msg = '', 2000);
+    setTimeout(() => {
+      this.msg = '';
+      if (callback) callback();
+    }, 3000);
   }
 
   getwordnum(e) {
     // 得到填入的字符数
     this.havenum = this.feedbackForm.value.word.length;
-    if (this.havenum >= 5) {
+    if (this.havenum >= 200) {
       event.returnValue = false;
     }
   }
@@ -93,15 +98,18 @@ export class FeedbackComponent implements OnInit {
       this.showTip('please input correct phonenumber');
       return;
     }
-    this.personService.feedback(this.feedbackForm.value.email, this.feedbackForm.value.tel, this.feedbackForm.value.word).subscribe( res => {
-      console.log(res);
-      // 如果提交成功
-      this.showTip('success!');
-      this.feedbackForm.value.email = '';
-      this.feedbackForm.value.tel = '';
-      this.feedbackForm.value.word = '';
-      // 提交失败
-      this.showTip('error');
+    // this.personService.feedback(this.feedbackForm.value.email, this.feedbackForm.value.tel, this.feedbackForm.value.word).subscribe( res => {
+    //   console.log(res);
+    //   // 如果提交成功
+    //   this.showTip('success!');
+    //   this.feedbackForm.value.email = '';
+    //   this.feedbackForm.value.tel = '';
+    //   this.feedbackForm.value.word = '';
+    //   // 提交失败
+    //   this.showTip('error');
+    // });
+    this.showTip('success!', () => {
+      this.navigateService.pushToRoute('./home');
     });
   }
 }

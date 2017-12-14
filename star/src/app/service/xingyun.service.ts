@@ -6,7 +6,7 @@ export class XingyunService {
 
   constructor(private httpService: HttpService) { }
 
-  // 获取幸运，type: 1 明天， 2 本周 3 本月 4 本年
+  // 获取幸运，type: 0 今天 1 明天  2 本周 3 本月 4 本年
   getXingyun(star, type) {
     return this.httpService.getMethod({
       url: 'Astro/Fortune',

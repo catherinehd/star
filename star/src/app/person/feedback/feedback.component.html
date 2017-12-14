@@ -7,13 +7,13 @@
     <label class="form-label">
       Email address:
     </label>
-    <input type="text" formControlName="email">
+    <input type="text" formControlName="email" id="email">
   </div>
   <div class="form-field tel">
     <label class="form-label">
       Mobile phone:
     </label>
-    <input type="number" formControlName="tel">
+    <input type="number" formControlName="tel" id="tel">
   </div>
   <div class="form-field comments">
     <textarea rows="10" id="comments" formControlName="word" placeholder="Your comments and feedback will be answered in time" (keydown)="getwordnum(e)"></textarea>

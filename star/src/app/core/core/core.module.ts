@@ -9,12 +9,13 @@ import { DeviceService } from '../../service/device.service';
 import { PersonService } from '../../service/person.service';
 import { BaodianService } from '../../service/baodian.service';
 import { ArticleService } from '../../service/article.service';
+import { XingyunService } from '../../service/xingyun.service';
 
 @NgModule({
   imports: [
     CommonModule, HttpModule, BrowserAnimationsModule
   ],
-  providers: [ NavigateService, HttpService, DeviceService, PersonService, BaodianService, ArticleService ],
+  providers: [ NavigateService, HttpService, DeviceService, PersonService, BaodianService, ArticleService, XingyunService ],
   exports: [ HttpModule, BrowserAnimationsModule ]
 })
 export class CoreModule {

@@ -1,6 +1,6 @@
 <app-nav [title]="'The daily star'" [showConfig]="{}"></app-nav>
 
-<main class="article-sec">
+<main class="article-sec" [appTouchLoading]="!isCompleted" (canLoad)="canLoad()">
   <ul class="article-list">
     <li appFastClick (onFastClick)="goPage('./article-detail/' + item.link)" *ngFor="let item of articleList">
       <div class="description">
@@ -25,6 +25,7 @@
       <img src={{item.image}} />
     </li>
   </ul>
+  <app-list-loading *ngIf="!isPageLoading && isLoading"></app-list-loading>
 </main>
 
 <app-tab></app-tab>

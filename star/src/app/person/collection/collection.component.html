@@ -3,11 +3,11 @@
 
 <main class="collection-sec">
   <ul class="collection-list" *ngIf="hascollection">
-    <li appFastClick (onFastClick)="goPage('./article-detail/1')">
-      <input *ngIf="finish" type="checkbox" id="1"/>
-      <div class="detail">
+    <li appFastClick (onFastClick)="goPage('./article-detail/' + item )" *ngFor="let item of listarr">
+      <input *ngIf="finish" type="checkbox" id={{item}}/>
+      <label class="detail" for={{item}}>
         <div class="title">
-          The most stupid sign and the five stars, are or fffffff
+          {{item}}
         </div>
         <div class="date">
           <svg>
@@ -15,64 +15,9 @@
           </svg>
           2017-11-21
         </div>
-      </div>
+      </label>
     </li>
-    <li appFastClick (onFastClick)="goPage('./article-detail/1')">
-      <input *ngIf="finish" type="checkbox" />
-      <div class="detail">
-        <div class="title">
-          The most stupid sign and the five stars, are or fffffff
-        </div>
-        <div class="date">
-          <svg>
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
-          </svg>
-          2017-11-21
-        </div>
-      </div>
-    </li>
-    <li appFastClick (onFastClick)="goPage('./article-detail/1')">
-      <input *ngIf="finish" type="checkbox" />
-      <div class="detail">
-        <div class="title">
-          The most stupid sign and the five stars, are or fffffff
-        </div>
-        <div class="date">
-          <svg>
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
-          </svg>
-          2017-11-21
-        </div>
-      </div>
-    </li>
-    <li appFastClick (onFastClick)="goPage('./article-detail/1')">
-      <input *ngIf="finish" type="checkbox" />
-      <div class="detail">
-        <div class="title">
-          The most stupid sign and the five stars, are or fffffff
-        </div>
-        <div class="date">
-          <svg>
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
-          </svg>
-          2017-11-21
-        </div>
-      </div>
-    </li>
-    <li appFastClick (onFastClick)="goPage('./article-detail/1')">
-      <input *ngIf="finish" type="checkbox" />
-      <div class="detail">
-        <div class="title">
-          The most stupid sign and the five stars, are or fffffff
-        </div>
-        <div class="date">
-          <svg>
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
-          </svg>
-          2017-11-21
-        </div>
-      </div>
-    </li>
+
   </ul>
 
   <div class="nocontent" *ngIf="!hascollection">
@@ -86,7 +31,7 @@
 
   <footer *ngIf="finish">
     <button [ngClass]="{'active': choose === 1}" appFastClick (onFastClick)="chooseall()">
-      Check all
+      {{btn}}
     </button>
     <button [ngClass]="{'active': choose === 2}" appFastClick (onFastClick)="choose = 2">
       Deleting({{choosenum}})
