@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { NavigateService } from '../../service/navigate.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { NavigateService } from '../../service/navigate.service';
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.styl']
 })
-export class CollectionComponent implements OnInit {
+export class CollectionComponent implements OnInit, OnChanges {
   finish: boolean;
   hascollection: boolean;
   choose = 2;
@@ -25,7 +25,11 @@ export class CollectionComponent implements OnInit {
   ngOnInit() {
     this.collectList = localStorage.getItem('collections');
     this.listarr = this.collectList.split(',').slice(1);
-    // console.log('test:' + document.getElementById(this.listarr[1]).checked);
+  }
+
+  ngOnChanges() {
+    this.choosenum = this.choosenum;
+    this.collectList = localStorage.getItem('collections');
   }
 
   // 进入编辑页面
@@ -43,6 +47,13 @@ export class CollectionComponent implements OnInit {
   goPage(url) {
     if (this.finish) {
       // 相应checkbox变为checked状态
+      let n = 0;
+      for (let i = 0 ; i < this.listarr.length; i++) {
+        if (document.querySelectorAll('input')[i].checked === true) {
+          n += 1;
+        }
+      }
+      this.choosenum = n;
     } else {
       this.navigateService.push();
       this.navigateService.pushToRoute(url);
@@ -52,23 +63,22 @@ export class CollectionComponent implements OnInit {
   // 选中所有列表
   chooseall() {
     let n = 0;
-    // console.log(document.getElementById('1').checked);
     for (let i = 0 ; i < this.listarr.length; i++) {
-      if (document.getElementById(this.listarr[i]).checked === true) {
+      if (document.querySelectorAll('input')[i].checked === true) {
         n++;
       }
     }
-    if(n == this.listarr.length) {
+    if (n === this.listarr.length) {
       this.choosenum = 0;
       this.btn = 'Check all';
       for (let i = 0 ; i < this.listarr.length; i++) {
-        document.getElementById(this.listarr[i]).checked = false;
+        document.querySelectorAll('input')[i].checked = false;
       }
     } else {
       this.choosenum = this.listarr.length;
       this.btn = 'Cancel';
       for (let i = 0 ; i < this.listarr.length; i++) {
-        document.getElementById(this.listarr[i]).checked = true;
+        document.querySelectorAll('input')[i].checked = true;
       }
     }
   }
