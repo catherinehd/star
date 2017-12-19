@@ -1,4 +1,4 @@
-<app-nav [title]="baodianTitle" [showConfig]="{isArrowShow:true}" (onSave)="onsave()"></app-nav>
+<app-nav [title]="baodianTitle" [showConfig]="{isArrowShow:true}"></app-nav>
 
 <main class="character-detail">
   <section class="top-sec">
@@ -20,35 +20,35 @@
     </div>
   </section>
 
-  <section class="content" *ngIf="!movie">
+  <section class="content">
     <p>
       {{starDetail.content}}
     </p>
   </section>
 
-  <section class="movie-content" *ngIf="movie">
-    <div class="brief">
-      <div class="title">
-        {{starDetail.title}}
-      </div>
-      <div class="detail">
-        <p>
-          {{starDetail.brief}}
-        </p>
-      </div>
-    </div>
-    <img src={{starDetail.movieimg}} />
-    <div class="comment">
-      <div class="title">
-        Recommended reasons:
-      </div>
-      <div class="detail">
-        <p>
-          {{starDetail.reasons}}
-        </p>
-      </div>
-    </div>
-  </section>
+  <!--<section class="movie-content" *ngIf="movie">-->
+    <!--<div class="brief">-->
+      <!--<div class="title">-->
+        <!--{{starDetail.title}}-->
+      <!--</div>-->
+      <!--<div class="detail">-->
+        <!--<p>-->
+          <!--{{starDetail.brief}}-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<img src={{starDetail.movieimg}} />-->
+    <!--<div class="comment">-->
+      <!--<div class="title">-->
+        <!--Recommended reasons:-->
+      <!--</div>-->
+      <!--<div class="detail">-->
+        <!--<p>-->
+          <!--{{starDetail.reasons}}-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</section>-->
 </main>
 
 <div class="exchange-tab" *ngIf="tabbar">

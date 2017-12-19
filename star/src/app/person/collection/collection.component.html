@@ -3,17 +3,17 @@
 
 <main class="collection-sec">
   <ul class="collection-list" *ngIf="hascollection">
-    <li appFastClick (onFastClick)="goPage('./article-detail/' + item )" *ngFor="let item of listarr">
-      <input *ngIf="finish" type="checkbox" id={{item}}/>
-      <label class="detail" for={{item}}>
-        <div class="title">
-          {{item}}
+    <li appFastClick (onFastClick)="goPage('./article-detail/' + item.linkUrl)" *ngFor="let item of articlearr">
+      <input *ngIf="finish" type="checkbox" id={{item.linkUrl}}/>
+      <label class="detail" for={{item.linkUrl}}>
+        <div class="smalltitle">
+          {{item.title}}
         </div>
         <div class="date">
           <svg>
-            <use xlink:href="assets/icon/symbol-defs.svg#icon-riqi"></use>
+            <use xlink:href="assets/icon/symbol-defs.svg#icon-nicheng"></use>
           </svg>
-          2017-11-21
+          <span class="author">{{item.author}}</span>
         </div>
       </label>
     </li>
@@ -33,8 +33,8 @@
     <button [ngClass]="{'active': choose === 1}" appFastClick (onFastClick)="chooseall()">
       {{btn}}
     </button>
-    <button [ngClass]="{'active': choose === 2}" appFastClick (onFastClick)="choose = 2">
-      Deleting({{choosenum}})
+    <button [ngClass]="{'active': choose === 2}" appFastClick (onFastClick)="delete()">
+      Deleting
     </button>
   </footer>
 </main>

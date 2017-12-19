@@ -4,6 +4,7 @@ import { HttpService } from './http.service';
 @Injectable()
 export class ArticleService {
 
+  cachelist: object;
   constructor(private httpService: HttpService) { }
 
   getArticleList(page) {
@@ -24,4 +25,19 @@ export class ArticleService {
     });
   }
 
+  storeArticleList(list, complete, page) {
+    this.cachelist =  new ArticleCache(list, complete, page);
+    // console.log(this.cachelist);
+  }
+
+  getCacheList() {
+    return this.cachelist;
+  }
+
+}
+
+class ArticleCache {
+  constructor(public list: any[],
+              public complete?: boolean,
+              public page?: number) {}
 }

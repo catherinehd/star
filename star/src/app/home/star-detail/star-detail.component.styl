@@ -1,7 +1,8 @@
 @import "../../../assets/css/variable"
 
 .top-container
-  position relative
+  position fixed
+  top 0
   background url('../../../assets/image/toubu.png')
   background-size 100%
   width 100%
@@ -52,7 +53,11 @@
       stroke none
 
 .navbar
+  position fixed
+  top 122px
   display flex
+  width 100%
+  background #fff
   justify-content space-around
   border-bottom $default-border
   font-size 1.3rem
@@ -66,6 +71,7 @@
   .active
     border-bottom 2px solid $theme-blue-color
 main
+  margin-top 165px
   padding-bottom 5.9rem
 
 .star-num-sec

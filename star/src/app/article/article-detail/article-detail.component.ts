@@ -58,7 +58,8 @@ export class ArticleDetailComponent implements OnInit {
 
   onsave() {
     if (this.iscollect) {
-      this.collection = localStorage.getItem('collections').substr(5).replace(/\}\,\{/g, '}{,}{');
+      this.articlearr = [];
+      this.collection = localStorage.getItem('collections').replace(/\}\,\{/g, '}{,}{');
       const listarr = this.collection.split('{,}');
       for (let i = 0; i < listarr.length; i++) {
         this.articlearr.push(eval('(' + listarr[i] + ')'));   // 添加到列表对象数组
@@ -69,11 +70,8 @@ export class ArticleDetailComponent implements OnInit {
          }
       }
       this.articlearr.splice(this.index, 1);
-      if (this.articlearr.length === 0) {
-        localStorage.setItem('collections', 'null');
-      } else {
-        localStorage.setItem('collections', 'null,' + JSON.stringify(this.articlearr).replace(/\[/g, '').replace(/\]/g, ''));
-      }
+      localStorage.removeItem('collections');
+      localStorage.setItem('collections',  JSON.stringify(this.articlearr).replace(/\[/g, '').replace(/\]/g, ''));
       this.iscollect = false;
       this.collectmsg = 'n';
     } else {
@@ -83,11 +81,9 @@ export class ArticleDetailComponent implements OnInit {
         author: this.author
       };
       this.collection = localStorage.getItem('collections');
-      if (this.collection === '') {
-        localStorage.setItem('collections' ,  'null,' + JSON.stringify(this.article));
-      } else if (this.collection === ',') {
-        localStorage.setItem('collections' ,  'null,' + JSON.stringify(this.article));
-      }else {
+      if (!this.collection) {
+        localStorage.setItem('collections' , JSON.stringify(this.article));
+      } else {
         localStorage.setItem('collections' , this.collection + ',' + JSON.stringify(this.article));
       }
       this.iscollect = true;

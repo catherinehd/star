@@ -36,7 +36,7 @@ export class BaodianDetailComponent implements OnInit, OnChanges {
     this.defaultStar = localStorage.getItem('star');
     if (!this.defaultStar) this.defaultStar = 'aries';
     this.setStarDateImg(this.defaultStar); // 设置星座的时间和图片
-    this.queryUrl = location.pathname.split('/')[2];
+    this.queryUrl = location.pathname.split('/')[location.pathname.split('/').length - 1];
     if (this.queryUrl === 'character') {
       this.baodianTitle = 'Constellation character';
       // 请求charatro对应星座的数据
@@ -56,29 +56,12 @@ export class BaodianDetailComponent implements OnInit, OnChanges {
         this.starDetail.content = res.json();
       });
     } else if (this.queryUrl === 'movie') {
-      this.baodianTitle = 'The movie is recommended';
-      this.movie = true;
+      this.baodianTitle = 'Interactive communication';
       // 请求love对应星座的数据
       this.baodianService.getBaodianInfo(this.defaultStar, 4).subscribe( res => {
-        console.log(res);
+        this.starDetail.content = res.json();
       });
     }
-    // this.starDetail = {
-    //   name: 'Taurus',
-    //   date: '3.1-4.4',
-    //   img: 'assets/image/taurus.svg',
-    //   content: 'A slow sign. All things always considered before filtering, belonging to the late form of the big, the ' +
-    //   'sentiment is also relatively late. But they have superhuman stability, and once the bet is made, it is safe to win.',
-    //   title: '《Wind and rain harvard road》',
-    //   movieimg: 'assets/image/dianying@2x.png',
-    //   brief: 'The film director is origin and desolate, as parents age eight drugs began begging, at the age of 15, her ' +
-    //   'mother died of AIDS, then father into a shelter, dispossessed her 17 years old started learning high school courses, ' +
-    //   'with only 2 years of optical finished high school four years course, won the New York times first-class scholarship' +
-    //   ' in 1996 and went to harvard to study.',
-    //   reasons: 'Aries are not afraid of the earth, and once they have made up their minds, they will never die, even if they ' +
-    //   'have to overcome everything to achieve their purpose. The main character of "harvard road" is similar to that of Aries.' +
-    //   ' Birth is not a choice for us, we can choose only to take the initiative to change our future.'
-    // };
   }
 
   ngOnChanges() {
@@ -108,30 +91,12 @@ export class BaodianDetailComponent implements OnInit, OnChanges {
       });
     } else if (this.queryUrl === 'movie') {
       this.setStarDateImg(star); // 设置星座的时间和图片
-      this.movie = true;
       // 请求movie对应星座的数据
       this.baodianService.getBaodianInfo(star, 4).subscribe( res => {
-        console.log(res.json());
+        this.starDetail.content = res.json();
+        this.setStarDateImg(star); // 设置星座的时间和图片
       });
     }
-    // this.starDetail = {
-    //   name: star,
-    //   date: '7.24-8.21',
-    //   img: 'assets/image/' + star.toLowerCase() + '.svg',
-    //   content: 'A slow sign. All things always considered before filtering, belonging to the late form of the big, the ' +
-    //   'sentiment is also relatively late. But they have superhuman stability, and once the bet is made, it is safe to ' +
-    //   'win.sentiment is also relatively late. But they have superhuman stability, and once the bet is made, it is safe to ' +
-    //   'win.sentiment is also relatively late. But they have superhuman stability, and once the bet is made, it is safe to ' +
-    //   'win.sentiment is also relatively late. But they have superhuman stability, and once the bet is made, it is safe to win.',
-    //   title: '《test》',
-    //   movieimg: 'assets/image/dianying@2x.png',
-    //   brief: 'high school four years course, won the New York times first-class scholarship' +
-    //   ' in 1996 and went to harvard to study.',
-    //   reasons: 'Aries are not afraid of the earth, and once they have made up their minds, they will never die, even if they ' +
-    //   'have to overcome everything to achieve their purpose. The main character of "harvard road" is similar to that of Aries.' +
-    //   ' Birth is not a choice for us, we can choose only to take the initiative to change our future.for us, we can choose only to' +
-    //   ' take the initiative to change our future.for us, we can choose only to take the initiative to change our future.'
-    // };
   }
 
   setStarDateImg(star) {

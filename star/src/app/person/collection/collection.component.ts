@@ -10,10 +10,12 @@ export class CollectionComponent implements OnInit, OnChanges {
   finish: boolean;
   hascollection: boolean;
   choose = 2;
-  choosenum: number;
-  collectList: any;
-  listarr: string[];
+  choosenum: number;    // 选择了的文章数目
+  collectList: any;   // 本地存储的字符串列表
+  listarr: string;     // 字符串数组格式化
+  articlearr: any[] = [];   // 对象数组
   btn: string;
+  article: object;  // 文章对象
 
   constructor(private navigateService: NavigateService) {
     this.finish = false;
@@ -23,8 +25,20 @@ export class CollectionComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.collectList = localStorage.getItem('collections');
-    this.listarr = this.collectList.split(',').slice(1);
+    if (localStorage.getItem('collections')) {
+      this.hascollection = true;
+      this.collectList = localStorage.getItem('collections').replace(/\}\,\{/g, '}{,}{');
+      this.listarr = this.collectList.split('{,}');
+      for (let i = 0; i < this.listarr.length; i++) {
+        this.articlearr.push(eval('(' + this.listarr[i] + ')'));   // 添加到列表对象数组
+      }
+      for (let i = 0 ; i < this.articlearr.length; i++) {
+        // 将路径里面的 \ 换成 / ,特殊符号在这里需要转义
+        this.articlearr[i].linkUrl = this.articlearr[i].linkUrl.replace(/\//g, '\\');
+      }
+    } else {
+      this.hascollection = false;
+    }
   }
 
   ngOnChanges() {
@@ -47,13 +61,19 @@ export class CollectionComponent implements OnInit, OnChanges {
   goPage(url) {
     if (this.finish) {
       // 相应checkbox变为checked状态
-      let n = 0;
-      for (let i = 0 ; i < this.listarr.length; i++) {
+      this.collectList = localStorage.getItem('collections').replace(/\}\,\{/g, '}{,}{');
+      this.listarr = this.collectList.split('{,}');
+      this.choosenum = 1;
+      for (let i = 0 ; i < this.listarr.length - 1; i++) {
         if (document.querySelectorAll('input')[i].checked === true) {
-          n += 1;
+          // choosenum
         }
       }
-      this.choosenum = n;
+      if (this.choosenum === this.listarr.length) {
+        this.btn = 'Cancel';
+      } else {
+        this.btn = 'Check all';
+      }
     } else {
       this.navigateService.push();
       this.navigateService.pushToRoute(url);
@@ -62,6 +82,9 @@ export class CollectionComponent implements OnInit, OnChanges {
 
   // 选中所有列表
   chooseall() {
+    if (!localStorage.getItem('collections')) return;
+    this.collectList = localStorage.getItem('collections').replace(/\}\,\{/g, '}{,}{');
+    this.listarr = this.collectList.split('{,}');
     let n = 0;
     for (let i = 0 ; i < this.listarr.length; i++) {
       if (document.querySelectorAll('input')[i].checked === true) {
@@ -80,6 +103,34 @@ export class CollectionComponent implements OnInit, OnChanges {
       for (let i = 0 ; i < this.listarr.length; i++) {
         document.querySelectorAll('input')[i].checked = true;
       }
+    }
+  }
+
+  // 删除选中项目
+  delete() {
+    if (this.choosenum === 0) return;
+    this.choose = 2;
+    this.articlearr = [];
+    this.collectList = '';
+    for (let i = 0 ; i < this.listarr.length; i++) {
+      if (document.querySelectorAll('input')[i].checked === false) {
+        this.article = {
+          title: document.getElementsByClassName('smalltitle')[i].innerHTML.replace(/\n/g, ''),
+          linkUrl: document.querySelectorAll('input')[i].id,
+          author: document.getElementsByClassName('author')[i].innerHTML.replace(/\n/g, '')
+        };
+        this.collectList +=  JSON.stringify(this.article) + ',';
+        this.articlearr.push(this.article);
+      }
+    }
+    localStorage.setItem('collections' , this.collectList.substring(0 , this.collectList.length - 1));
+    this.choosenum = 0;
+    this.btn = 'Check all';
+    if (!localStorage.getItem('collections')) {
+      this.hascollection = false;
+      this.finish = false;
+    } else {
+      this.hascollection = true;
     }
   }
 

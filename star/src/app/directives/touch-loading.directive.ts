@@ -9,7 +9,7 @@ export class TouchLoadingDirective {
   nativeElem: HTMLElement;
 
   constructor(private elementRef: ElementRef) {
-    this.nativeElem = this.elementRef.nativeElement
+    this.nativeElem = this.elementRef.nativeElement;
   }
 
   @HostListener('scroll') onScroll() {
