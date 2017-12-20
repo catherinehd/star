@@ -121,7 +121,7 @@ export class BaodianDetailComponent implements OnInit, OnChanges {
       this.starDetail.date = '11.23-12.21';
     } else if (choosestar === 'capricorn') {
       this.starDetail.date = '12.22-1.19';
-    } else if (choosestar === 'aquarii') {
+    } else if (choosestar === 'aquarius') {
       this.starDetail.date = '1.20-2.18';
     } else if (choosestar === 'pisces') {
       this.starDetail.date = '2.19-3.20';
