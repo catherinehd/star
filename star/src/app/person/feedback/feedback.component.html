@@ -16,7 +16,7 @@
     <input type="number" formControlName="tel" id="tel">
   </div>
   <div class="form-field comments">
-    <textarea rows="10" id="comments" formControlName="word" placeholder="Your comments and feedback will be answered in time" (keydown)="getwordnum(e)"></textarea>
+    <textarea rows="10" id="comments" formControlName="word" placeholder="Your comments and feedback will be answered in time" (keyup)="cutmsg()"></textarea>
   </div>
   <div class="word-num"><span>{{havenum}}/{{allnum}}</span></div>
 </div>

@@ -28,7 +28,6 @@
     ad.appendChild(btngroup);
     document.body.appendChild(ad);
 
-
     // 添加swiper插件
     new_element=document.createElement("script");
     new_element.setAttribute("type","text/javascript");
@@ -36,18 +35,18 @@
     document.body.appendChild(new_element);
 
     var swiper = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
-    })
+      pagination: '.swiper-pagination'
+    });
 
     //跳转到主页
     adimg2.onclick = function() {
         setTimeout(function(){
-          // ad.style.opacity = '0';
-          // ad.style.visibility = 'hidden';
-          document.getElementsByClassName('swiper-container').style.opacity = '0';
-          document.getElementsByClassName('swiper-container').style.visibility = '0';
+          for (var i = 0; i<document.getElementsByClassName('swiper-container').length; i++) {
+            document.getElementsByClassName('swiper-container')[i].style.opacity = '0';
+            document.getElementsByClassName('swiper-container')[i].style.display = 'none';
+          }
         }, 1000);
-    }
+    };
 
 
 
@@ -55,7 +54,7 @@
      // cordova.InAppBrowser.open('http://www.baidu.com', '_blank', 'location=no,toolbar=no')
 
         return this;
-    }
+    };
 
     window.Ad = Ad;
 

@@ -52,6 +52,11 @@ export class CollectionComponent implements OnInit, OnChanges {
     this.finish = true;
   }
 
+  // 手指离开时候触发
+  touchend() {
+    console.log('a');
+  }
+
   // 进入列表状态
   onfinish() {
     this.finish = false;
@@ -63,10 +68,11 @@ export class CollectionComponent implements OnInit, OnChanges {
       // 相应checkbox变为checked状态
       this.collectList = localStorage.getItem('collections').replace(/\}\,\{/g, '}{,}{');
       this.listarr = this.collectList.split('{,}');
+      // console.log(event);
       this.choosenum = 1;
-      for (let i = 0 ; i < this.listarr.length - 1; i++) {
+      for (let i = 0 ; i < this.listarr.length; i++) {
         if (document.querySelectorAll('input')[i].checked === true) {
-          // choosenum
+          this.choosenum++;
         }
       }
       if (this.choosenum === this.listarr.length) {

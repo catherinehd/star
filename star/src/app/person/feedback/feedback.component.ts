@@ -82,12 +82,10 @@ export class FeedbackComponent implements OnInit {
     }, 3000);
   }
 
-  getwordnum(e) {
-    // 得到填入的字符数
-    this.havenum = this.feedbackForm.value.word.length;
-    if (this.havenum >= 200) {
-      event.returnValue = false;
-    }
+  cutmsg() {
+    // 当使用复制功能时候，对复制的内容只截取规定范围内的字符
+    document.querySelector('textarea').value = this.feedbackForm.value.word.substring(0 , 200);
+    this.havenum = document.querySelector('textarea').value.length;
   }
 
   onSubmit() {
@@ -95,7 +93,7 @@ export class FeedbackComponent implements OnInit {
     this.testValid();
     if (!this.feedbackForm.valid) return;
     if (this.feedbackForm.value.tel.toString().length !== 11) {
-      this.showTip('please input correct phonenumber');
+      this.showTip('please input correct phone number');
       return;
     }
     // this.personService.feedback(this.feedbackForm.value.email, this.feedbackForm.value.tel, this.feedbackForm.value.word).subscribe( res => {

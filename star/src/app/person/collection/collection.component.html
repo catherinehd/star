@@ -31,7 +31,7 @@
 
   <footer *ngIf="finish">
     <button [ngClass]="{'active': choose === 1}" appFastClick (onFastClick)="chooseall()">
-      {{btn}}
+      Check all
     </button>
     <button [ngClass]="{'active': choose === 2}" appFastClick (onFastClick)="delete()">
       Deleting
