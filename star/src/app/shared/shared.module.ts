@@ -16,10 +16,12 @@ import { ListLoadingComponent } from './list-loading/list-loading.component';
 @NgModule({
   imports: [ CommonModule, RouterModule ],
   declarations: [
-    TabComponent, NavComponent, DevicePaddingDirective, FastClickDirective, TelFormatDirective, TouchLoadingDirective, FlyMsgComponent, ListLoadingComponent
+    TabComponent, NavComponent, DevicePaddingDirective, FastClickDirective, TelFormatDirective, TouchLoadingDirective,
+    FlyMsgComponent, ListLoadingComponent
   ],
   exports: [
-    CommonModule, RouterModule, TabComponent, NavComponent, ReactiveFormsModule, DevicePaddingDirective, FastClickDirective, ListLoadingComponent,
+    CommonModule, RouterModule, TabComponent, NavComponent, ReactiveFormsModule, DevicePaddingDirective, FastClickDirective,
+    ListLoadingComponent,
     TelFormatDirective, FlyMsgComponent, TouchLoadingDirective
   ]
 })
